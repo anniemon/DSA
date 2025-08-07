@@ -3,10 +3,10 @@ let [a, b] = fs.readFileSync('/dev/stdin').toString().split(' ').map(Number);
 
 let steps = 1;
 while(b > a) {
-  if(Number.isInteger((b - 1) / 10)) {
+  if(b % 10 === 1) {
     b = (b - 1) / 10;
     steps += 1;
-  } else if(Number.isInteger(b / 2)) {
+  } else if((b % 2) === 0) {
     b = b / 2;
     steps += 1;
   } else {
